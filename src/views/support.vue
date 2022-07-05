@@ -498,6 +498,7 @@ const empty = ref(false);
 @import '@/assets/scss/layout/_table.scss';
 @import '@/assets/scss/layout/_form.scss';
 @import '@/assets/scss/pages/_support.scss';
+@import '@/assets/scss/components/_buttons.scss';
 </style>
 <style lang="scss">
 @import '@/assets/scss/components/_multiselect.scss';
