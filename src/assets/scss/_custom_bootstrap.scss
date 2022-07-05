@@ -1,0 +1,28 @@
+$primary: color(primary-color);
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/root';
+@import '~bootstrap/scss/mixins';
+
+@import '~bootstrap/scss/reboot';
+@import '~bootstrap/scss/containers';
+@import '~bootstrap/scss/bootstrap-grid';
+@import '~bootstrap/scss/helpers';
+@import '~bootstrap/scss/bootstrap-utilities';
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/buttons';
+@import '~bootstrap/scss/placeholders';
+
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+}
+img[src=''] {
+  visibility: hidden;
+}

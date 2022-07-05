@@ -1,0 +1,85 @@
+%label-animation {
+  transition: color 200ms cubic-bezier(0, 0, 0.2, 1) 0ms,
+    transform 200ms cubic-bezier(0, 0, 0.2, 1) 0ms;
+}
+
+.custom-form {
+  input:not([type='radio']):not([type='checkbox']),
+  textarea,
+  select {
+    padding: 5px 10px;
+    border: 1px solid color(login-input-border);
+    border-radius: 4px;
+    height: 38px;
+    font-size: 14px;
+    font-weight: 400;
+    color: color(black-color);
+    margin-top: 6px;
+    transition: all 0s ease-out;
+    &:focus,
+    &:active {
+      border-color: color(primary-color);
+      outline: none;
+    }
+    &::placeholder {
+      color: color(placeholder);
+    }
+    &[disabled],
+    &.disabled {
+      background: lighten(color(gray-color), $amount: 30);
+      border-radius: 3px;
+    }
+    &.invalid {
+      background-image: linear-gradient(
+          to top,
+          color(multi-cancel) 2px,
+          rgba(156, 39, 176, 0) 2px
+        ),
+        linear-gradient(to top, #d2d2d2 1px, rgba(210, 210, 210, 0) 1px);
+      background-size: 100% 100%, 100% 100%;
+    }
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+    &[type='number'] {
+      -moz-appearance: textfield;
+    }
+    &.icon-left {
+      padding-left: 34px;
+    }
+    &.bg-primary {
+      &::placeholder {
+        color: #fff;
+      }
+    }
+  }
+  textarea {
+    height: 54px;
+    overflow: auto !important;
+    &.resize-none {
+      resize: none;
+    }
+    &.h-90 {
+      min-height: 90px;
+    }
+  }
+  label {
+    font-size: 14px;
+    color: color(black-color);
+  }
+  .icon-left-placement {
+    top: 40px;
+    left: 9px;
+    font-size: 17px;
+    color: color(placeholder);
+    &.top-10 {
+      top: 10px;
+    }
+    &.top-50 {
+      transform: translateY(-50%);
+      line-height: 0;
+    }
+  }
+}

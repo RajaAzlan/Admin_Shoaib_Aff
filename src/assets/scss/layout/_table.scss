@@ -1,0 +1,204 @@
+@import '~@/assets/scss/base/variables';
+%font-size-table-body {
+  font-size: 14px;
+  font-weight: 400;
+}
+%table-sort-padding {
+  padding: 25px 10px 25px 25px;
+}
+%tableScroll {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 10px;
+    background-color: lighten(color(primary-color), $amount: 12);
+    border-radius: 30px;
+  }
+  &::-webkit-scrollbar-track {
+    -webkit-border-radius: 30px;
+    border-radius: 30px;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    background: darken(color(primary-color), $amount: 12);
+  }
+}
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 4px 4px 0 0;
+  table {
+    tbody tr:nth-child(even) {
+      background-color: rgba(241, 241, 241, 0.4);
+    }
+    border-collapse: collapse;
+    margin-bottom: 16px;
+    &.custom-table {
+      width: 100%;
+      thead {
+        background-color: color(sidebar);
+        border-radius: 4px 4px 0 0;
+        tr {
+          padding-bottom: 10px;
+          th {
+            padding: 26px 6px;
+            font-size: 15px;
+            font-weight: 500;
+            color: color(color-white);
+            border: none;
+            text-align: left;
+            color: color(color-white);
+            &:focus {
+              outline: none;
+            }
+            &.action {
+              text-align: right;
+            }
+            &:first-child,
+            &:last-child {
+              padding-left: 30px;
+            }
+          }
+        }
+      }
+      tbody {
+        tr {
+          td {
+            padding: 20px 6px;
+            @extend %font-size-table-body;
+            letter-spacing: 1px;
+            color: color(black-color);
+            border-top: 1px solid color(input-border);
+            a {
+              color: color(black-color);
+            }
+            select {
+              @extend %font-size-table-body;
+              width: 150px;
+            }
+            .status {
+              padding: 3px 10px;
+              font-size: 13px;
+              border-radius: 30px;
+              &.success {
+                background-color: color(success);
+              }
+              &.invalid {
+                background-color: color(multi-cancel);
+              }
+              &.process {
+                background-color: color(card-yellow);
+              }
+              &.gray {
+                @include cardbackground(color(card-purple), 39);
+              }
+              &.yellow {
+                @include cardbackground(color(card-yellow), 34);
+              }
+              &.green {
+                @include cardbackground(color(success), 45);
+              }
+              &.blue {
+                @include cardbackground(color(primary-color), 35);
+              }
+              &.red {
+                @include cardbackground(color(multi-cancel), 26);
+              }
+            }
+            &:first-child {
+              padding-left: 30px;
+            }
+            &.action {
+              a {
+                margin: 0;
+                min-width: 30px;
+                min-height: 30px;
+                line-height: 30px;
+                border-radius: 50%;
+                text-align: center;
+                transition: all 0.3s linear;
+                &.edit {
+                  color: color(gray-color);
+                }
+                i {
+                  color: color(gray-color);
+                  font-size: 16px;
+                  line-height: 0;
+                  vertical-align: middle;
+                }
+                &:focus {
+                  outline: none;
+                }
+                &:hover {
+                  background-color: lighten(
+                    color(secondary-color),
+                    $amount: 34
+                  );
+                  box-shadow: 0 0 4px rgba(136, 136, 136, 0.3);
+                  transition: all 0.3s linear;
+                  i {
+                    color: color(primary-color);
+                  }
+                }
+              }
+              &.two-content {
+                min-width: 79px;
+              }
+            }
+            &.mw-300 {
+              max-width: 300px;
+            }
+          }
+          border-bottom: 1px solid #ddd;
+          @include transition;
+          &:last-child {
+            border: none;
+          }
+        }
+      }
+      .empty-wrapper {
+        figure {
+          width: 90px;
+          height: 90px;
+          background-color: lighten(color(placeholder), $amount: 26);
+          img {
+            width: 48px;
+          }
+        }
+      }
+    }
+    &.support-table {
+      tbody {
+        tr {
+          td {
+            &:first-child {
+              max-width: 100px;
+            }
+          }
+        }
+      }
+      min-width: 950px;
+    }
+    figure {
+      width: 80px;
+      height: 80px;
+      img {
+        object-fit: contain;
+      }
+    }
+    .max-length-40 {
+      width: 40%;
+    }
+  }
+  @extend %tableScroll;
+}
+.table-footer {
+  p {
+    @media screen and (max-width: 575px) {
+      width: 100%;
+    }
+  }
+}

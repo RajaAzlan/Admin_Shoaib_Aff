@@ -1,0 +1,36 @@
+.support {
+  .card {
+    .icon-box {
+      i:before {
+        font-size: 30px;
+      }
+      &.large-box {
+        width: 70px;
+        height: 70px;
+        i {
+          &:before {
+            font-size: 60px;
+          }
+        }
+      }
+    }
+    &.purple {
+      @include cardbackground(color(card-purple), 39);
+    }
+    &.yellow {
+      @include cardbackground(color(card-yellow), 34);
+    }
+    &.green {
+      @include cardbackground(color(success), 45);
+    }
+    &.blue {
+      @include cardbackground(color(primary-color), 35);
+    }
+    &.red {
+      @include cardbackground(color(multi-cancel), 26);
+    }
+  }
+  .custom-multiselect-small {
+    height: 38px;
+  }
+}

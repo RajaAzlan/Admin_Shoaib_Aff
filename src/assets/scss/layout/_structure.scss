@@ -1,0 +1,50 @@
+@import '~@/assets/scss/base/typography';
+html,
+body {
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -ms-overflow-style: scrollbar;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  a,
+  a:hover {
+    text-decoration: none;
+  }
+  &::-webkit-scrollbar {
+    background-color: color(mobile-sidebar);
+    width: 6px;
+  }
+  &::-webkit-scrollbar-thumb {
+    border-radius: 30px;
+    background-color: darken(color(gray-color), $amount: 10);
+  }
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background-color: lighten(color(gray-color), $amount: 10);
+    }
+  }
+}
+* {
+  font-family: 'Poppins', sans-serif;
+}
+.invalid-message {
+  font-size: 14px;
+  color: color(multi-cancel);
+  width: 100%;
+}
+.font-14 {
+  font-size: 14px;
+}
+.font-16 {
+  font-size: 16px;
+}
+.font-20 {
+  font-size: 20px;
+}
+.list-unstyled {
+  list-style-type: none;
+}
+.container-fluid {
+  @media screen and (max-width: 390px) {
+    padding: 0;
+  }
+}

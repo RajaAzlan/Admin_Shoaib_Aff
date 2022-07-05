@@ -1,0 +1,24 @@
+$colors: (
+  'body-color': #f9f9f9,
+  'primary-color': #4466f2,
+  'secondary-color': #9397a0,
+  'black-color': #313131,
+  'placeholder': #9c9fa6,
+  'gray-color': #707887,
+  'input': #495057,
+  'input-border': #f0f2f5,
+  'sidebar': #2b303b,
+  'sidebar-dark': #1e2229,
+  'multi-cancel': #ff6a6a,
+  'success': #4caf50,
+  'login-input-border': #afafaf,
+  'card-purple': #7b3de8,
+  'card-yellow': #e2b454,
+  'front-gray': #d9d9d9,
+);
+$default-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+$font-placeholder: 14px;
+
+@function color($ColorName) {
+  @return map-get($colors, $ColorName);
+}

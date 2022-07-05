@@ -1,0 +1,105 @@
+%input-color {
+  border-color: color(input-border);
+}
+.tox {
+  &.tox-tinymce {
+    margin-top: 6px;
+    border-radius: 4px;
+    @extend %input-color;
+    z-index: 0;
+    .tox-statusbar {
+      display: none;
+    }
+  }
+}
+.ql-toolbar {
+  margin-top: 6px;
+  &.ql-snow {
+    border-radius: 4px 4px 0 0;
+    @extend %input-color;
+  }
+}
+.ql-container {
+  &.ql-snow {
+    border-radius: 0 0 4px 4px;
+    @extend %input-color;
+  }
+}
+p {
+  img {
+    max-width: 100%;
+  }
+
+  &.editor-p-tag {
+    font-family: $font-family-sans-serif;
+    white-space: pre-wrap;
+    font-size: 14px;
+  }
+  // font family
+
+  .ql-font-serif {
+    font-family: Georgia, Times New Roman, serif;
+  }
+  .ql-font-monospace {
+    font-family: $font-family-monospace;
+  }
+
+  // inverted quotes
+
+  blockquote {
+    position: relative;
+    display: inline-block;
+    padding: 0 10px;
+
+    &::after,
+    &::before {
+      font-size: 20px;
+    }
+
+    &::before {
+      position: absolute;
+      content: '\275B \275B ';
+      left: -5px;
+      top: -5px;
+    }
+
+    &::after {
+      content: ' \275C \275C';
+    }
+  }
+  // font size
+
+  .ql-size-small {
+    font-size: 0.75em;
+  }
+  .ql-size-large {
+    font-size: 1.5em;
+  }
+  .ql-size-huge {
+    font-size: 2.5em;
+  }
+  // text alignment
+
+  &.ql-align-center {
+    text-align: center;
+  }
+  &.ql-align-justify {
+    text-align: justify;
+  }
+  &.ql-align-right {
+    text-align: right;
+  }
+  &.ql-direction-rtl {
+    direction: rtl;
+  }
+  // indent
+  @for $indentLength from 1 to 9 {
+    &.ql-indent-#{$indentLength}:not(.ql-direction-rtl) {
+      padding-left: $indentLength * 3#{em};
+    }
+
+    &.ql-indent-#{$indentLength}.ql-direction-rtl {
+      padding-right: $indentLength * 3#{em};
+    }
+  }
+}

@@ -1,0 +1,14 @@
+%btn-shadow {
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.2);
+}
+.btn {
+  font-size: 14px !important;
+  @extend %btn-shadow;
+  &:focus,
+  &:active:focus {
+    @extend %btn-shadow;
+  }
+  &:hover {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  }
+}

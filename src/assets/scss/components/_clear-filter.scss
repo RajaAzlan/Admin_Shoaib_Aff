@@ -1,0 +1,11 @@
+.clear-btn {
+  outline: none;
+  border: none;
+  color: darken(color(multi-cancel), $amount: 3);
+  background: none;
+  font-weight: 500;
+  transition: all 0.3s linear;
+  &:hover {
+    color: darken(color(multi-cancel), $amount: 8);
+  }
+}

@@ -1,0 +1,284 @@
+%transition {
+  transition: 0.25s ease-in-out;
+}
+%side-padding {
+  padding: 7.3px 18px;
+}
+body {
+  .sidebar {
+    background-color: color(sidebar);
+    height: 100vh;
+    width: 230px;
+    scroll-behavior: smooth;
+    z-index: 21;
+    .logo {
+      padding: 10.5px 0;
+      background-color: color(sidebar-dark);
+      a {
+        width: 140px;
+        transition: width 0.4s ease-in-out;
+      }
+      img {
+        object-fit: contain;
+        &:nth-child(2) {
+          display: none;
+        }
+      }
+    }
+    .sidelinks-wrapper {
+      padding: 12px 0 0;
+      height: calc(100vh - 75px);
+      padding-bottom: 30px;
+      margin: 0;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        background-color: color(sidebar);
+        width: 6px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: color(sidebar);
+      }
+      &:hover {
+        &::-webkit-scrollbar-thumb {
+          background-color: lighten(color(sidebar), $amount: 16);
+        }
+      }
+      .custom-form {
+        .form-group {
+          div {
+            width: 100%;
+            padding-left: 17px;
+            margin: 10px 0;
+            input {
+              width: 82%;
+              float: left;
+            }
+          }
+        }
+      }
+    }
+    ul {
+      li {
+        img {
+          width: 22px;
+          height: 22px;
+          object-fit: contain;
+        }
+        a {
+          font-weight: 500;
+          border-radius: 3px;
+          color: color(gray-color);
+          @extend %side-padding;
+          .icon-box {
+            min-width: 40px;
+            min-height: 40px;
+            max-width: 40px;
+            max-height: 40px;
+            border-radius: 4px;
+            background-color: color(sidebar-dark);
+          }
+          i {
+            font-size: 20px;
+            color: color(gray-color);
+            line-height: 12px;
+            @extend %transition;
+            &.caret {
+              display: inline-block;
+              top: 19px;
+              right: 17px;
+              font-size: 13px;
+              transform: rotate(0deg);
+              transition: all 0.3s ease-in-out;
+            }
+          }
+          p {
+            font-size: 14px;
+            font-weight: 400;
+            margin-left: 14px;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            max-width: 73%;
+            overflow: hidden;
+            @extend %transition;
+          }
+          &:hover {
+            img {
+              @extend %transition;
+              -webkit-filter: brightness(0) invert(1);
+              filter: brightness(0) invert(1);
+            }
+            i,
+            p {
+              @extend %transition;
+              color: #fff;
+            }
+          }
+          &.active,
+          &.router-link-exact-active {
+            img {
+              -webkit-filter: brightness(0) invert(1);
+              filter: brightness(0) invert(1);
+            }
+            .icon-box {
+              background-color: color(primary-color);
+            }
+            p,
+            i {
+              color: #fff;
+            }
+          }
+        }
+        &.heading {
+          @extend %side-padding;
+          p {
+            color: color(gray-color);
+            border-bottom: 1px solid darken(color(gray-color), $amount: 8);
+            padding-bottom: 8px;
+            font-size: 14px;
+            margin: 6px 0 8px;
+            white-space: nowrap;
+          }
+        }
+        .custom-dropdown-menu {
+          display: none;
+          a {
+            color: color(heading-color);
+            font-size: 14px;
+            font-weight: 400;
+          }
+          &.show {
+            display: block;
+          }
+        }
+        &:first-child {
+          a {
+            margin-top: 0;
+          }
+        }
+        .side-collapse {
+          background-color: color(sidebar-dark);
+          max-height: 0;
+          overflow: hidden;
+          transition: all 0.3s ease-in-out;
+          li {
+            a {
+              padding: 0 20px 12;
+              p {
+                font-size: 12px;
+              }
+              &:before {
+                @include pseudo_function(
+                  '',
+                  null,
+                  7px,
+                  7px,
+                  null,
+                  null,
+                  null,
+                  null,
+                  color(gray-color)
+                );
+                border-radius: 50%;
+                margin: 10px 14px;
+                @extend %transition;
+              }
+              &:hover {
+                &:before {
+                  background-color: #fff;
+                  @extend %transition;
+                }
+              }
+            }
+            &:first-child {
+              a {
+                padding-top: 17px;
+              }
+            }
+          }
+        }
+        &.show {
+          .side-collapse {
+            max-height: 1000px;
+            transition: all 0.3s ease-in-out;
+            li {
+              a {
+                &.router-link-active {
+                  &:before {
+                    background-color: color(primary-color);
+                  }
+                }
+              }
+            }
+          }
+          a {
+            i {
+              &.caret {
+                transform: rotate(180deg);
+                transition: all 0.3s ease-in-out;
+              }
+            }
+          }
+        }
+      }
+    }
+    @media screen and (max-width: 991px) {
+      top: 70px;
+      width: 0;
+    }
+  }
+  &.nav-toggle {
+    .sidebar {
+      width: 70px;
+      .logo {
+        a {
+          width: 50px;
+          img:nth-child(1) {
+            display: none;
+          }
+          img:nth-child(2) {
+            display: block;
+            max-height: 20px;
+          }
+        }
+      }
+      &:hover {
+        width: 230px;
+        .logo {
+          a {
+            width: 140px;
+            img:nth-child(1) {
+              display: block;
+            }
+            img:nth-child(2) {
+              display: none;
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 991px) {
+        width: 230px;
+        overflow: hidden;
+      }
+      @media screen and (min-width: 991px) {
+        .heading {
+          display: none;
+        }
+        .custom-collapse.show .side-collapse {
+          max-height: 0;
+        }
+      }
+      &:hover {
+        @media screen and (min-width: 991px) {
+          .heading {
+            display: block;
+          }
+          .custom-collapse.show .side-collapse {
+            max-height: 1000px;
+          }
+        }
+      }
+    }
+  }
+}

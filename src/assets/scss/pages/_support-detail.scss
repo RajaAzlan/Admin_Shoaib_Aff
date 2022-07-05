@@ -1,0 +1,179 @@
+$user-name: 46px;
+%text-dark {
+  color: color(black-color);
+}
+%text-gray {
+  color: color(secondary-color);
+}
+%border {
+  border-bottom: 1px solid lighten(color(secondary-color), $amount: 20);
+}
+.support-detail {
+  .heading-wrapper {
+    h4 {
+      @extend %text-dark;
+      @media screen and (max-width: 575px) {
+        font-size: 18px;
+      }
+    }
+    p {
+      @extend %text-gray;
+    }
+  }
+  .user-detail {
+    .user-name {
+      width: $user-name;
+      height: $user-name;
+      @media screen and (max-width: 575px) {
+        width: 35px;
+        height: 35px;
+      }
+    }
+    .user-info {
+      width: calc(100% - #{$user-name});
+      h4 {
+        @extend %text-dark;
+        @media screen and (max-width: 575px) {
+          font-size: 15px;
+        }
+      }
+      h6 {
+        @extend %text-gray;
+        @media screen and (max-width: 575px) {
+          font-size: 13px;
+        }
+      }
+      textarea {
+        background-color: lighten(color(front-gray), $amount: 12);
+        border-color: color(front-gray);
+        &::placeholder {
+          color: darken(color(front-gray), $amount: 20);
+          font-weight: 400;
+          font-size: 14px;
+        }
+        &::-webkit-scrollbar {
+          width: 4px;
+          background-color: lighten(color(front-gray), $amount: 4);
+          border-radius: 30px;
+        }
+        &::-webkit-scrollbar-track {
+          -webkit-border-radius: 30px;
+          border-radius: 30px;
+          background: transparent;
+          border: none;
+          box-shadow: none;
+        }
+        &::-webkit-scrollbar-thumb {
+          -webkit-border-radius: 5px;
+          border-radius: 5px;
+          background: darken(color(front-gray), $amount: 12);
+        }
+      }
+      &.reply {
+        .upload-file {
+          &.editor {
+            top: 270px;
+            right: 25px;
+          }
+          top: 20px;
+          right: 14px;
+          label {
+            width: $user-name - 14px;
+            height: $user-name - 14px;
+            background-color: #fff;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.08);
+            cursor: pointer;
+            i {
+              line-height: 0;
+              &:before {
+                font-size: 15px;
+              }
+            }
+          }
+        }
+      }
+      @media screen and (max-width: 575px) {
+        width: calc(100% - 35px);
+      }
+    }
+  }
+  .discussion {
+    li {
+      @extend %text-dark;
+      padding-bottom: 4px;
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+  .border-custom {
+    @extend %border;
+  }
+  .comments {
+    ul {
+      li {
+        @extend %border;
+      }
+    }
+    .comment {
+      p {
+        @extend %text-dark;
+        white-space: pre-line;
+      }
+    }
+  }
+  .support-info {
+    span {
+      &:first-child {
+        width: 50%;
+      }
+    }
+  }
+  .status {
+    border-radius: 30px;
+    &.gray {
+      @include cardbackground(color(card-purple), 39);
+    }
+    &.yellow {
+      @include cardbackground(color(card-yellow), 34);
+    }
+    &.green {
+      @include cardbackground(color(success), 45);
+    }
+    &.blue {
+      @include cardbackground(color(primary-color), 35);
+    }
+    &.red {
+      @include cardbackground(color(multi-cancel), 26);
+    }
+  }
+  .border-li {
+    li {
+      @extend %border;
+      &:last-child {
+        padding-bottom: 0 !important;
+        border: none;
+      }
+    }
+  }
+  .uploaded-file {
+    figure {
+      width: 80px;
+      height: 80px;
+      border: 1px solid color(front-gray);
+      border-radius: 4px;
+      img {
+        object-fit: cover;
+      }
+    }
+    .cancel {
+      width: 20px;
+      height: 20px;
+      line-height: 0;
+      top: -6px;
+      right: -9px;
+      cursor: pointer;
+      background-color: lighten(color(multi-cancel), $amount: 10);
+    }
+  }
+}

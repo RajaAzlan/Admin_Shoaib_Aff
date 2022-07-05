@@ -1,0 +1,44 @@
+body {
+  .sidebar {
+    @include nav_animation;
+  }
+  .main-content {
+    width: calc(100% - 230px);
+    margin-left: auto;
+    background-color: color(body-color);
+    min-height: 100vh;
+    @include nav_animation;
+    @media screen and (max-width: 991px) {
+      width: 100%;
+      transition: all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1);
+    }
+  }
+  &.nav-toggle {
+    nav {
+      .code {
+        &.open {
+          i {
+            @media screen and (min-width: 992px) {
+              &.bi-justify {
+                display: block;
+              }
+              &.bi-text-left {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .main-content {
+      width: calc(100% - 70px);
+      @media screen and (max-width: 991px) {
+        position: relative;
+        width: 100%;
+      }
+    }
+  }
+  .inner-content {
+    margin-top: 26px;
+  }
+}

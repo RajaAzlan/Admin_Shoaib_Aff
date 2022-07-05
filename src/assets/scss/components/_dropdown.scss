@@ -1,0 +1,78 @@
+%primary-color {
+  color: color(primary-color);
+}
+.dropdown-custom {
+  .dropdown {
+    button {
+      &.btn {
+        box-shadow: none;
+        padding: 7px 13.5px;
+        margin-left: 5px;
+      }
+    }
+    .dropdown-menu {
+      display: none;
+      padding: 0.3125rem 0;
+      border: none;
+      box-shadow: $default-shadow;
+      background-color: #fff;
+      border-radius: 4px;
+      list-style: none;
+      z-index: 1;
+      animation-name: dropdownAnimation;
+      animation-duration: 0.25s;
+      animation-fill-mode: both;
+      li {
+        a {
+          padding: 15px 30px;
+          font-size: 14px;
+          font-weight: 400;
+          width: auto;
+          color: color(black-color);
+          transition: all 150ms linear;
+          i:before {
+            font-size: 20px;
+          }
+          &:hover {
+            background-color: color(body-color);
+            @extend %primary-color;
+            i:before {
+              @extend %primary-color;
+            }
+            transition: all 150ms linear;
+          }
+        }
+        &:last-child {
+          a {
+            margin-bottom: 0;
+          }
+        }
+      }
+      &.show {
+        display: block;
+      }
+    }
+  }
+}
+@keyframes dropdownAnimation {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -30px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0px, 0);
+  }
+}
+@keyframes dropdownAnimation2 {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 30px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0px, 0);
+  }
+}
