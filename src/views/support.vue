@@ -475,7 +475,7 @@
   </section>
 </template>
 
-<script setup>
+<script>
 // for multiselect
 import Multiselect from '@vueform/multiselect';
 import '@vueform/multiselect/themes/default.css';
@@ -484,14 +484,22 @@ import VPagination from '@hennge/vue3-pagination';
 import '@hennge/vue3-pagination/dist/vue3-pagination.css';
 // For ClearFilter
 import ClearFilter from '../components/ClearFilter.vue';
-// For Tooltip
-import VTooltip from 'v-tooltip';
 import { ref } from 'vue';
+export default {
+  components: {
+    Multiselect,
+    VPagination,
+    ClearFilter,
+  },
+  setup() {
+    const value = ref();
+    const page = ref(1);
+    const partOptions = ref(['Abuse', 'Marketing', 'Sales']);
+    const empty = ref(false);
 
-const value = ref();
-const page = ref(1);
-const partOptions = ref(['Abuse', 'Marketing', 'Sales']);
-const empty = ref(false);
+    return { value, page, partOptions, empty };
+  },
+};
 </script>
 <style lang="scss" scoped>
 @import '@/assets/scss/layout/_card.scss';
@@ -503,4 +511,5 @@ const empty = ref(false);
 <style lang="scss">
 @import '@/assets/scss/components/_multiselect.scss';
 @import '@/assets/scss/components/_pagination.scss';
+@import '@/assets/scss/components/_tooltip.scss';
 </style>

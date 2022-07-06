@@ -33,7 +33,9 @@
     </div>
   </aside>
 </template>
-<script setup></script>
+<script>
+export default {};
+</script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/layout/_sidebar.scss';

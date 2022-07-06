@@ -405,15 +405,19 @@
     </div>
   </section>
 </template>
-<script setup>
+<script>
 import { ref } from 'vue';
-// For Tooltip
-import VTooltip from 'v-tooltip';
-
-const file = ref();
-const uploadFile = e => {
-  file.value = e.target.files[0];
-  file.value = URL.createObjectURL(file.value);
+export default {
+  setup() {
+    const file = ref();
+    const uploadFile = e => {
+      file.value = e.target.files[0];
+      file.value = URL.createObjectURL(file.value);
+    };
+    return {
+      uploadFile,
+    };
+  },
 };
 </script>
 

@@ -4,7 +4,9 @@
   </div>
 </template>
 
-<script setup></script>
+<script>
+export default {};
+</script>
 <style lang="scss" scoped>
 @import '@/assets/scss/components/_button-loader.scss';
 </style>

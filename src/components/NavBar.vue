@@ -139,18 +139,25 @@
     </div>
   </nav>
 </template>
-<script setup>
-const toggleNav = () => {
-  let menu = document.querySelector('body');
-  let menuToggle = document.querySelector('.code');
+<script>
+export default {
+  setup() {
+    const toggleNav = () => {
+      let menu = document.querySelector('body');
+      let menuToggle = document.querySelector('.code');
 
-  if (menu.classList.contains('nav-toggle')) {
-    menu.classList.remove('nav-toggle');
-    menuToggle.classList.remove('open');
-  } else {
-    menu.classList.add('nav-toggle');
-    menuToggle.classList.add('open');
-  }
+      if (menu.classList.contains('nav-toggle')) {
+        menu.classList.remove('nav-toggle');
+        menuToggle.classList.remove('open');
+      } else {
+        menu.classList.add('nav-toggle');
+        menuToggle.classList.add('open');
+      }
+    };
+    return {
+      toggleNav,
+    };
+  },
 };
 </script>
 <style lang="scss" scoped>
