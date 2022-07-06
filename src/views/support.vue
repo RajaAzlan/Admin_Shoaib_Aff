@@ -390,24 +390,10 @@
                           <td>08/10/2021</td>
                           <td>08/10/2021</td>
                           <td class="action">
-                            <a
-                              href="#"
-                              class="edit d-inline-block me-2"
-                              v-tooltip="{ content: 'Edit' }"
-                              data-bs-toggle="modal"
-                              data-bs-target="#edit"
-                              @click.prevent
-                            >
+                            <a href="#" class="edit d-inline-block me-2">
                               <i class="bi bi-pencil-fill"></i>
                             </a>
-                            <a
-                              href="#"
-                              class="edit d-inline-block"
-                              v-tooltip="{ content: 'Delete' }"
-                              data-bs-toggle="modal"
-                              data-bs-target="#edit"
-                              @click.prevent
-                            >
+                            <a href="#" class="edit d-inline-block">
                               <i class="bi bi-trash-fill"></i>
                             </a>
                           </td>
@@ -511,5 +497,4 @@ export default {
 <style lang="scss">
 @import '@/assets/scss/components/_multiselect.scss';
 @import '@/assets/scss/components/_pagination.scss';
-@import '@/assets/scss/components/_tooltip.scss';
 </style>

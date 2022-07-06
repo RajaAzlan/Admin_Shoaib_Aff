@@ -234,7 +234,6 @@
                                       align-items-center
                                       justify-content-center
                                     "
-                              v-tooltip="{ content: 'Upload File' }"
                             >
                               <i class="bi bi-paperclip"></i>
                             </label>
@@ -415,6 +414,7 @@ export default {
       file.value = URL.createObjectURL(file.value);
     };
     return {
+      file,
       uploadFile,
     };
   },

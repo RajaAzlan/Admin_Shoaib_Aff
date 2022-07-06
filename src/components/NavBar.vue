@@ -117,16 +117,8 @@
                       <i class="bi bi-gear me-3"></i>Settings</a
                     >
                   </li>
-                  <li
-                    class="d-flex flex-wrap"
-                    data-bs-toggle="modal"
-                    data-bs-target="#reminder"
-                  >
-                    <router-link
-                      to="/"
-                      class="dropdown-item w-100"
-                      @click.prevent
-                    >
+                  <li class="d-flex flex-wrap">
+                    <router-link to="/" class="dropdown-item w-100">
                       <i class="bi bi-box-arrow-right me-3"></i>Logout
                     </router-link>
                   </li>
