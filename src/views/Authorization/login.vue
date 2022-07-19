@@ -26,9 +26,9 @@
               <p class="mb-0 font-16">Log in to your dashboard.</p>
             </div>
             <LoginForm />
-            <a href="#" class="primary-color">
+            <router-link to="/forgot-password" class="primary-color">
               <i class="bi bi-shield-lock"></i> Forget Password
-            </a>
+            </router-link>
             <p class="text-center mt-5 font-login mb-0">
               Copyright @ {{ year }} by Mangocoders
             </p>
@@ -38,7 +38,7 @@
     </div>
   </section>
 </template>
-<script>
+<script lang="ts">
 import LoginForm from '@/components/Auth/LoginForm.vue';
 export default {
   components: {

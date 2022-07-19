@@ -1,0 +1,43 @@
+@import '~@/assets/scss/base/animations';
+.custom-modal {
+  &.popup-animation {
+    &.show {
+      .modal-dialog {
+        -webkit-animation: popup-animate 0.3s;
+        animation: popup-animate 0.3s;
+      }
+      &.hide {
+        .modal-dialog {
+          -webkit-animation: popout-animate 0.3s;
+          animation: popout-animate 0.3s;
+        }
+      }
+    }
+    &.slow {
+      .modal-dialog {
+        -webkit-animation: popup-animate 0.8s;
+        animation: popup-animate 0.8s;
+      }
+      &.hide {
+        .modal-dialog {
+          -webkit-animation: popout-animate 0.8s;
+          animation: popout-animate 0.8s;
+        }
+      }
+    }
+  }
+  .modal-header {
+    h1 {
+      font-size: 20px;
+      color: color(black-color);
+    }
+  }
+  .modal-footer {
+    .btn-primary {
+      min-width: 125.3px;
+    }
+  }
+  .px-modal-body {
+    padding: 1rem;
+  }
+}

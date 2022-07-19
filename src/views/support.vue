@@ -333,14 +333,18 @@
                     >
                       <thead>
                         <tr>
-                          <th class="text-capitalize">Ticket#</th>
-                          <th class="text-capitalize">Ticket Detail</th>
-                          <th class="text-capitalize">Priority</th>
-                          <th class="text-capitalize">Status</th>
-                          <th class="text-capitalize">Status 2</th>
-                          <th class="text-capitalize">Final Answer</th>
-                          <th class="text-capitalize">Created</th>
-                          <th class="text-capitalize">Actions</th>
+                          <th class="text-capitalize text-white">Ticket#</th>
+                          <th class="text-capitalize text-white">
+                            Ticket Detail
+                          </th>
+                          <th class="text-capitalize text-white">Priority</th>
+                          <th class="text-capitalize text-white">Status</th>
+                          <th class="text-capitalize text-white">Status 2</th>
+                          <th class="text-capitalize text-white">
+                            Final Answer
+                          </th>
+                          <th class="text-capitalize text-white">Created</th>
+                          <th class="text-capitalize text-white">Actions</th>
                         </tr>
                       </thead>
                       <tbody>
@@ -461,13 +465,12 @@
   </section>
 </template>
 
-<script>
+<script lang="ts">
 // for multiselect
 import Multiselect from '@vueform/multiselect';
 import '@vueform/multiselect/themes/default.css';
 // pagination
 import VPagination from '@hennge/vue3-pagination';
-import '@hennge/vue3-pagination/dist/vue3-pagination.css';
 // For ClearFilter
 import ClearFilter from '../components/ClearFilter.vue';
 import { ref } from 'vue';
@@ -496,5 +499,4 @@ export default {
 </style>
 <style lang="scss">
 @import '@/assets/scss/components/_multiselect.scss';
-@import '@/assets/scss/components/_pagination.scss';
 </style>

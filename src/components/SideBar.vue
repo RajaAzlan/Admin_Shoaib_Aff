@@ -29,11 +29,24 @@
             <p class="mb-0">Support</p>
           </router-link>
         </li>
+        <li>
+          <router-link to="/users" class="d-flex align-items-center">
+            <span
+              class="d-flex justify-content-center align-items-center icon-box"
+            >
+              <img
+                src="@/assets/images/admin-panel/customer.png"
+                alt="icon_image"
+              />
+            </span>
+            <p class="mb-0">Users</p>
+          </router-link>
+        </li>
       </ul>
     </div>
   </aside>
 </template>
-<script>
+<script lang="ts">
 export default {};
 </script>
 

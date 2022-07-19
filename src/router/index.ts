@@ -4,7 +4,12 @@ const routes = [
   {
     path: '',
     name: 'login',
-    component: () => import('@/views/login.vue'),
+    component: () => import('@/views/Authorization/login.vue'),
+  },
+  {
+    path: '/forgot-password',
+    name: 'forgot-password',
+    component: () => import('@/views/Authorization/forgotPassword.vue'),
   },
   {
     path: '',
@@ -17,6 +22,10 @@ const routes = [
       {
         path: '/support-detail',
         component: () => import('@/views/supportDetail.vue'),
+      },
+      {
+        path: '/users',
+        component: () => import('@/views/users.vue'),
       },
     ],
   },

@@ -12,7 +12,11 @@ $primary: color(primary-color);
 @import '~bootstrap/scss/forms';
 @import '~bootstrap/scss/buttons';
 @import '~bootstrap/scss/placeholders';
+@import '~bootstrap/scss/modal';
 
+// Calling those scss wich cant be scoped
+@import '~@hennge/vue3-pagination/dist/vue3-pagination.css';
+@import '@/assets/scss/components/_pagination';
 *,
 html,
 body {

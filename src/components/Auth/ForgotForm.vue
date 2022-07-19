@@ -8,22 +8,9 @@
         </p>
       </div>
     </div>
-    <div class="col-12">
-      <div class="position-relative mb-3">
-        <BaseInput
-          label="Password"
-          placeHolder="Type Password"
-          type="password"
-          v-model="password"
-        />
-        <p v-if="passwordValidation == true" class="invalid-message mb-0 pt-2">
-          Please Enter Password
-        </p>
-      </div>
-    </div>
     <button
       class="btn btn-primary w-100"
-      @click.prevent="loginAuth()"
+      @click.prevent="forgotAuth()"
       :disabled="Loading == true"
     >
       <ButtonLoader v-if="Loading == true" />
@@ -44,34 +31,23 @@ export default {
   },
   setup() {
     const email = ref('');
-    const password = ref('');
     const emailValidation = ref('');
-    const passwordValidation = ref('');
     const router = useRouter();
     const Loading = ref(false);
 
-    const loginAuth = () => {
-      if (email.value.length == 0 && password.value.length == 0) {
+    const forgotAuth = () => {
+      if (email.value.length == 0) {
         emailValidation.value = true;
-        passwordValidation.value = true;
-      } else if (email.value.length == 0) {
-        emailValidation.value = true;
-      } else if (password.value.length == 0) {
-        emailValidation.value = false;
-        passwordValidation.value = true;
       } else {
         emailValidation.value = false;
-        passwordValidation.value = false;
         Loading.value = true;
-        router.push({ path: '/support' });
+        router.push({ path: '/' });
       }
     };
     return {
       email,
-      password,
       emailValidation,
-      passwordValidation,
-      loginAuth,
+      forgotAuth,
       Loading,
     };
   },
